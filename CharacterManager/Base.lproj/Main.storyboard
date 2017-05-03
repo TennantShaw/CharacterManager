@@ -209,7 +209,7 @@
                                     <action selector="warriorSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Vfn-Cb-mQr"/>
                                 </connections>
                             </switch>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Alive" highlightedImage="Dead" translatesAutoresizingMaskIntoConstraints="NO" id="XrJ-Ax-swo">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Alive" highlightedImage="Dead" translatesAutoresizingMaskIntoConstraints="NO" id="XrJ-Ax-swo">
                                 <rect key="frame" x="154" y="49" width="205" height="157"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>

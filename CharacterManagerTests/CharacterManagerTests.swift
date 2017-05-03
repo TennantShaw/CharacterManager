@@ -10,27 +10,34 @@ import XCTest
 @testable import CharacterManager
 
 class CharacterManagerTests: XCTestCase {
-    
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testSerializeToJSON() {
+        let expectedName = "Tennant"
+        let expectedHP = 100
+        let expectedMP = 100
+        let expectedSTR = 12
+        let expectedINT = 12
+        let expectedDEF = 12
+        
+        let character = Character(name: "Tennant", hp: 100, mp: 100, str: 12, int: 12, def: 12)
+        
+        let result = character.jsonObject
+        
+        if let resultName = result[Character.nameKey] as? String,
+            let resultHP = result[Character.hpKey] as? Int,
+            let resultMP = result[Character.mpKey] as? Int,
+            let resultSTR = result[Character.strKey] as? Int,
+            let resultINT = result[Character.intKey] as? Int,
+            let resultDEF = result[Character.defKey] as? Int {
+            XCTAssertEqual(resultName, expectedName)
+            XCTAssertEqual(resultHP, expectedHP)
+            XCTAssertEqual(resultMP, expectedMP)
+            XCTAssertEqual(resultSTR, expectedSTR)
+            XCTAssertEqual(resultINT, expectedINT)
+            XCTAssertEqual(resultDEF, expectedDEF)
+        } else {
+            XCTFail("failed to extract value(s) for JSON Keys")
         }
     }
-    
 }
+
+
